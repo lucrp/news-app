@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
 
         val networkEntity: NewsNetworkEntity = mapper.mapToEntity(newsArticle)
 
-
+        val r: NewsArticle = mapper.mapFromEntity(networkEntity)
 
     }
 }

@@ -17,8 +17,24 @@ class NewsNetworkMapper : EntityMapper<NewsNetworkEntity, NewsArticle> {
         )
     }
 
+    override fun mapToEntity(domainModel: NewsArticle): NewsNetworkEntity {
+        return NewsNetworkEntity(
+            source = domainModel.source,
+            author = domainModel.author,
+            title = domainModel.title,
+            description = domainModel.description,
+            url = domainModel.url,
+            urlToImage = domainModel.urlToImage,
+            publishedAt = domainModel.publishedAt
+        )
+    }
+
     fun fromEntityList(initial: List<NewsNetworkEntity>): List<NewsArticle> {
-        return initial.map { mapFromEntity(it) }
+        return initial.map { mapFromEntity(it)}
+    }
+
+    fun toEntityList(initial: List<NewsArticle>): List<NewsNetworkEntity> {
+        return initial.map { mapToEntity(it) }
     }
 
 }
