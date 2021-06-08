@@ -4,7 +4,7 @@ import com.example.news_app.domain.model.Source
 import com.google.gson.annotations.SerializedName
 import java.util.*
 
-class NewsNetworkEntity(
+data class NewsDto(
     @SerializedName("source")
     var source : Source,
 

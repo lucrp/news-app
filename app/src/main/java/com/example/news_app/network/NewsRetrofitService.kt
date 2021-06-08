@@ -1,6 +1,6 @@
 package com.example.news_app.network
 
-import com.example.news_app.network.responses.HeadlinesResponse
+import com.example.news_app.network.responses.NewsResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -11,5 +11,5 @@ interface NewsRetrofitService {
         @Query("category") category: String?,
         @Query("pageSize") pageSize: Int,
         @Query("page") page: Int
-    ): HeadlinesResponse
+    ): NewsResponse
 }
