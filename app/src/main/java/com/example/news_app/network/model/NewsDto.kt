@@ -8,6 +8,9 @@ data class NewsDto(
     @SerializedName("source")
     var source : Source,
 
+    @SerializedName("content")
+    var content : String,
+
     @SerializedName("author")
     var author : String?,
 

@@ -20,6 +20,7 @@ class NewsDtoMapper : DomainMapper<NewsDto, Article> {
     override fun mapFromDomainModel(domainModel: Article): NewsDto {
         return NewsDto(
             source = domainModel.source,
+            content = domainModel.content,
             author = domainModel.author,
             title = domainModel.title,
             description = domainModel.description,
@@ -29,11 +30,11 @@ class NewsDtoMapper : DomainMapper<NewsDto, Article> {
         )
     }
 
-    fun fromEntityList(initial: List<NewsDto>): List<Article> {
+    fun toDomainList(initial: List<NewsDto>): List<Article> {
         return initial.map { mapToDomainModel(it)}
     }
 
-    fun toEntityList(initial: List<Article>): List<NewsDto> {
+    fun fromDomainList(initial: List<Article>): List<NewsDto> {
         return initial.map { mapFromDomainModel(it) }
     }
 
